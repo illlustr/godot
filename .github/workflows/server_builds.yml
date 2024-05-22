@@ -24,11 +24,13 @@ jobs:
             cache-name: server-editor-mono
             target: release_debug
             tools: true
+            encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
           - name: Linux Server w/ Mono (target=release, tools=no)
             cache-name: server-template-mono
             target: release
             tools: false
+            encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
     steps:
       - uses: actions/checkout@v4
@@ -61,3 +63,4 @@ jobs:
           platform: server
           target: ${{ matrix.target }}
           tools: ${{ matrix.tools }}
+          encryption-key: ${{ secrets.ENCRYPTION_KEY }}
