@@ -321,7 +321,7 @@ Ref<Theme> create_editor_theme(const Ref<Theme> p_theme) {
 	OS::get_singleton()->benchmark_begin_measure("create_editor_theme");
 	Ref<Theme> theme = Ref<Theme>(memnew(Theme));
 
-	const float default_contrast = 0.25;
+	const float default_contrast = 0.2;
 
 	//Theme settings
 	Color accent_color = EDITOR_GET("interface/theme/accent_color");
@@ -377,8 +377,8 @@ Ref<Theme> create_editor_theme(const Ref<Theme> p_theme) {
 		preset_base_color = Color(0.99, 0.96, 0.89);
 		preset_contrast = 0.06;
 	} else { // Default
-		preset_accent_color = Color(0.41, 0.61, 0.91);
-		preset_base_color = Color(0.2, 0.23, 0.31);
+		preset_accent_color = Color(0.08, 0.08, 0.08);
+		preset_base_color = Color(0.66, 0.75, 0.93);
 		preset_contrast = default_contrast;
 	}
 
