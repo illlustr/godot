@@ -81,6 +81,9 @@ private:
 	bool same_column_width;
 	bool allow_search;
 
+	bool auto_width;
+	float auto_width_value;
+
 	bool auto_height;
 	float auto_height_value;
 
@@ -224,6 +227,9 @@ public:
 
 	void set_icon_scale(real_t p_scale);
 	real_t get_icon_scale() const;
+
+	void set_auto_width(bool p_enable);
+	bool has_auto_width() const;
 
 	void set_auto_height(bool p_enable);
 	bool has_auto_height() const;
