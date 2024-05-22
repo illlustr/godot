@@ -25,11 +25,13 @@ jobs:
             target: release_debug
             tools: true
             bin: "./bin/godot.osx.opt.tools.64"
+            encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
           - name: Template (target=release, tools=no)
             cache-name: macos-template
             target: release
             tools: false
+            encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
     steps:
       - uses: actions/checkout@v4
@@ -50,6 +52,7 @@ jobs:
           platform: osx
           target: ${{ matrix.target }}
           tools: ${{ matrix.tools }}
+          encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
       - name: Prepare artifact
         run: |
