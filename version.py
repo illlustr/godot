@@ -8,4 +8,3 @@ module_config = ""
 year = 2024
 website = "https://github.com/naiiveprojects"
 docs = "3.6"
- 
