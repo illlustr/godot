@@ -48,6 +48,14 @@ jobs:
             build-mono: false
             artifact: true
 
+          - name: Template
+            cache-name: linux-template
+            target: release
+            tools: false
+            sconsflags: debug_symbols=no
+            build-mono: false
+            artifact: true
+
           - name: Minimal template (target=release, tools=no, everything disabled)
             cache-name: linux-template-minimal
             target: release
