@@ -28,13 +28,11 @@ jobs:
             target: release_debug
             tools: true
             bin: "./bin/godot.windows.opt.tools.64.exe"
-            encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
           - name: Template (target=release, tools=no)
             cache-name: windows-template
             target: release
             tools: false
-            encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
     steps:
       - uses: actions/checkout@v4
@@ -58,7 +56,6 @@ jobs:
           platform: windows
           target: ${{ matrix.target }}
           tools: ${{ matrix.tools }}
-          encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
       - name: Prepare artifact
         run: |

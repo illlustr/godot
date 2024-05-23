@@ -34,7 +34,6 @@ jobs:
           platform: iphone
           target: release
           tools: false
-          encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
       - name: Upload artifact
         uses: ./.github/actions/upload-artifact
