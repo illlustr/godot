@@ -219,6 +219,7 @@ void OS_Windows::initialize_core() {
 	IP_Unix::make_default();
 
 	cursor_shape = CURSOR_ARROW;
+	
 }
 
 bool OS_Windows::can_draw() const {
@@ -1939,6 +1940,11 @@ int OS_Windows::get_mouse_button_state() const {
 
 void OS_Windows::set_window_title(const String &p_title) {
 	SetWindowTextW(hWnd, p_title.c_str());
+	// Dark Mode
+	BOOL USE_DARK_MODE = true;
+	BOOL SET_IMMERSIVE_DARK_MODE_SUCCESS = SUCCEEDED(DwmSetWindowAttribute(
+    hWnd, DWMWINDOWATTRIBUTE::DWMWA_USE_IMMERSIVE_DARK_MODE,
+    &USE_DARK_MODE, sizeof(USE_DARK_MODE)));
 }
 
 void OS_Windows::set_window_mouse_passthrough(const PoolVector2Array &p_region) {
