@@ -1,4 +1,4 @@
-name: 🟢 Android Builds
+name: 🤖 Android Builds
 on:
   workflow_call:
 
@@ -47,7 +47,6 @@ jobs:
           platform: android
           target: release
           tools: false
-          encryption-key: ${{ secrets.ENCRYPTION_KEY }}
 
       #- name: Compilation (arm64v8)
         #uses: ./.github/actions/godot-build
