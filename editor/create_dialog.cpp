@@ -556,7 +556,7 @@ void CreateDialog::_item_selected() {
 
 	const String brief_desc = item->get_tooltip(0);
 	if (EditorHelp::get_doc_data()->class_list.has(name)) {
-		help_bit->set_text(("[%s] %s", name, brief_desc));
+		help_bit->set_text(vformat("[%s] %s", name, brief_desc));
 	} else {
 		help_bit->set_text(vformat("[url=%s]%s[/url]", brief_desc, name));
 	}
