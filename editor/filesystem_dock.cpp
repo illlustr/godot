@@ -319,7 +319,7 @@ void FileSystemDock::_create_tree(TreeItem *p_parent, EditorFileSystemDirectory 
 				file_item->set_as_cursor(0);
 			}
 			if (main_scene == file_metadata) {
-				file_item->set_custom_color(0, get_theme_color(SNAME("accent_color"), EditorStringName(Editor)));
+				file_item->set_icon(0, get_editor_theme_icon(SNAME("PlayScene")));
 			}
 			Array udata = { tree_update_id, file_item };
 			EditorResourcePreview::get_singleton()->queue_resource_preview(file_metadata, this, "_tree_thumbnail_done", udata);
@@ -1129,7 +1129,7 @@ void FileSystemDock::_update_file_list(bool p_keep_selection) {
 		}
 
 		if (fpath == main_scene) {
-			files->set_item_custom_fg_color(item_index, get_theme_color(SNAME("accent_color"), EditorStringName(Editor)));
+			files->set_item_tag_icon(item_index, get_editor_theme_icon(SNAME("PlayScene")));
 		}
 
 		// Generate the preview.
