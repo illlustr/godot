@@ -1129,7 +1129,11 @@ void FileSystemDock::_update_file_list(bool p_keep_selection) {
 		}
 
 		if (fpath == main_scene) {
-			files->set_item_tag_icon(item_index, get_editor_theme_icon(SNAME("PlayScene")));
+			if (use_thumbnails) {
+				files->set_item_icon(item_index, get_editor_theme_icon(SNAME("PlayScene")));
+			} else {
+				files->set_item_tag_icon(item_index, get_editor_theme_icon(SNAME("PlayScene")));
+			}
 		}
 
 		// Generate the preview.
